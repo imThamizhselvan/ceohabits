@@ -37,8 +37,8 @@ export function Auth() {
       <div className="lg:w-[55%] bg-[hsl(224,71%,4%)] text-white flex flex-col p-8 lg:p-12 relative overflow-hidden">
         {/* Background blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-purple-600/20 blur-[100px] -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-blue-600/15 blur-[80px] translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-amber-500/15 blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-orange-500/10 blur-[80px] translate-x-1/3 translate-y-1/3" />
         </div>
 
         {/* Logo link */}
@@ -47,7 +47,7 @@ export function Auth() {
           className="relative z-10 flex items-center gap-2 mb-12 w-fit group"
         >
           <div className="w-8 h-8 rounded-lg xp-gradient flex items-center justify-center transition-opacity group-hover:opacity-80">
-            <Crown className="w-4 h-4 text-white" />
+            <Crown className="w-4 h-4 text-black" />
           </div>
           <span className="font-bold text-lg">CEOhabits</span>
         </Link>
