@@ -7,6 +7,10 @@ import { cn } from '../lib/utils';
 
 const HERO_VIDEO = 'https://assets.mixkit.co/videos/18063/18063-720.mp4';
 
+const goldGradient = {
+  backgroundImage: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 40%, #d97706 100%)',
+} as const;
+
 const features = [
   {
     icon: Zap,
@@ -44,7 +48,7 @@ export function Landing() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
       {/* Sticky Nav */}
-      <header className="glass-card fixed top-0 left-0 right-0 z-50 border-b border-white/10">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg xp-gradient flex items-center justify-center">
@@ -117,7 +121,7 @@ export function Landing() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             Build Habits That{' '}
-            <span className="xp-gradient bg-clip-text text-transparent">Make You CEO</span>
+            <span className="bg-clip-text text-transparent" style={goldGradient}>Make You CEO</span>
           </motion.h1>
 
           <motion.p
@@ -312,7 +316,10 @@ export function Landing() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="text-4xl mb-3">{stat.icon}</div>
-                <div className="text-4xl font-extrabold mb-1 xp-gradient bg-clip-text text-transparent">
+                <div
+                  className="text-4xl font-extrabold mb-1 bg-clip-text text-transparent"
+                  style={goldGradient}
+                >
                   {stat.value}
                 </div>
                 <div className="text-white/35 text-sm">{stat.label}</div>

@@ -6,6 +6,10 @@ import { LEVELS } from '../lib/gamification';
 import { buttonVariants } from '../components/ui/button';
 import { cn } from '../lib/utils';
 
+const goldGradient = {
+  backgroundImage: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 40%, #d97706 100%)',
+} as const;
+
 const bullets = [
   {
     icon: Zap,
@@ -61,7 +65,7 @@ export function Auth() {
             transition={{ duration: 0.5 }}
           >
             Build habits that{' '}
-            <span className="xp-gradient bg-clip-text text-transparent">define leaders</span>
+            <span className="bg-clip-text text-transparent" style={goldGradient}>define leaders</span>
           </motion.h1>
 
           <motion.p
