@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { Habit, HabitLog } from '../types/habit';
+import { today } from '../lib/utils';
 
 interface HabitState {
   habits: Habit[];
@@ -45,9 +46,9 @@ export const useHabitStore = create<HabitState>((set, get) => ({
       todayLogs: state.todayLogs.filter((l) => l.id !== logId),
     })),
   isCompletedToday: (habitId) => {
-    const today = new Date().toISOString().split('T')[0];
+    const todayStr = today();
     return get().todayLogs.some(
-      (l) => l.habit_id === habitId && l.completed_at === today
+      (l) => l.habit_id === habitId && l.completed_at === todayStr
     );
   },
 }));

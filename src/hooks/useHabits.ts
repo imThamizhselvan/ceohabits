@@ -12,6 +12,15 @@ export function useHabits(userId: string | undefined) {
     fetchHabits();
     fetchTodayLogs();
 
+    // Reset today's logs at midnight so habits uncheck on the new day
+    const now = new Date();
+    const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const msUntilMidnight = tomorrow.getTime() - now.getTime();
+    const midnightTimer = setTimeout(() => {
+      store.setTodayLogs([]);
+      fetchTodayLogs();
+    }, msUntilMidnight);
+
     const subscription = supabase
       .channel('habit_logs_changes')
       .on(
@@ -25,7 +34,10 @@ export function useHabits(userId: string | undefined) {
       )
       .subscribe();
 
-    return () => { subscription.unsubscribe(); };
+    return () => {
+      clearTimeout(midnightTimer);
+      subscription.unsubscribe();
+    };
   }, [userId]);
 
   async function fetchHabits() {

@@ -152,7 +152,7 @@ export function Auth() {
           </p>
 
           <div className="flex justify-center mb-8">
-            <SignIn routing="hash" />
+            <SignIn routing="hash" forceRedirectUrl="/dashboard" />
           </div>
 
           <p className="text-center text-xs text-[hsl(var(--muted-foreground))] mb-6">
