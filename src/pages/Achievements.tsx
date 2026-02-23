@@ -60,7 +60,7 @@ export function Achievements() {
     }
   }
 
-  function getProgressValue(conditionType: string, conditionValue: number): number | undefined {
+  function getProgressValue(conditionType: string): number | undefined {
     if (!progress) return undefined;
     switch (conditionType) {
       case 'total_completions': return progress.totalCompletions;
@@ -113,7 +113,7 @@ export function Achievements() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {sorted.map((ach) => {
             const isUnlocked = earnedIds.has(ach.id);
-            const currentProgress = isUnlocked ? undefined : getProgressValue(ach.condition_type, ach.condition_value);
+            const currentProgress = isUnlocked ? undefined : getProgressValue(ach.condition_type);
             return (
               <AchievementCard
                 key={ach.id}

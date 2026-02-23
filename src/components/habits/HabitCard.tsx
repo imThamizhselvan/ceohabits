@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Pencil, Archive, ChevronDown, ChevronUp, ArrowUp, ArrowDown } from 'lucide-react';
+import { Check, Pencil, Archive, ChevronDown, ArrowUp, ArrowDown } from 'lucide-react';
 import type { Habit } from '../../types/habit';
 import { StreakBadge } from './StreakBadge';
 import { CategoryTag } from './CategoryTag';
