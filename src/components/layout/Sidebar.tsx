@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { getLevelFromXP } from '../../lib/gamification';
 
 const navItems = [
-  { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/habits', icon: ListChecks, label: 'My Habits' },
   { to: '/achievements', icon: Trophy, label: 'Achievements' },
   { to: '/profile', icon: User, label: 'Profile' },
@@ -72,7 +72,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             <NavLink
               key={to}
               to={to}
-              end={to === '/'}
+              end={to === '/dashboard'}
               onClick={onClose}
               className={({ isActive }) =>
                 cn(

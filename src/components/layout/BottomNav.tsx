@@ -3,7 +3,7 @@ import { LayoutDashboard, ListChecks, Trophy, User } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const navItems = [
-  { to: '/',             icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/dashboard',    icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/habits',       icon: ListChecks,      label: 'Habits' },
   { to: '/achievements', icon: Trophy,           label: 'Achieve' },
   { to: '/profile',      icon: User,             label: 'Profile' },
@@ -16,7 +16,7 @@ export function BottomNav() {
         <NavLink
           key={to}
           to={to}
-          end={to === '/'}
+          end={to === '/dashboard'}
           className={({ isActive }) =>
             cn(
               'flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-[10px] font-medium transition-colors',

@@ -19,7 +19,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
     );
   }
 
-  if (!isSignedIn) return <Navigate to="/auth" replace />;
+  if (!isSignedIn) return <Navigate to="/" replace />;
   return <>{children}</>;
 }
 
@@ -34,6 +34,6 @@ export function AuthRoute({ children }: ProtectedRouteProps) {
     );
   }
 
-  if (isSignedIn) return <Navigate to="/" replace />;
+  if (isSignedIn) return <Navigate to="/dashboard" replace />;
   return <>{children}</>;
 }
