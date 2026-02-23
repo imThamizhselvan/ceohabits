@@ -200,7 +200,7 @@ export function Landing() {
             {features.map((feature, i) => (
               <motion.div
                 key={feature.title}
-                className="glass-card rounded-2xl p-6 border border-white/8 hover:border-amber-500/30 transition-colors"
+                className="bg-[#111111] rounded-2xl p-6 border border-white/[0.08] hover:border-amber-500/25 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -243,7 +243,7 @@ export function Landing() {
             {LEVELS.filter((l) => l.level < 8).map((level, i) => (
               <motion.div
                 key={level.level}
-                className="glass-card rounded-2xl p-5 border border-white/8 hover:border-white/15 transition-colors"
+                className="bg-[#111111] rounded-2xl p-5 border border-white/[0.08] hover:border-white/20 transition-colors"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -272,7 +272,7 @@ export function Landing() {
                 <motion.div
                   key={ceo.level}
                   className={cn(
-                    'glass-card rounded-2xl p-6 border border-amber-500/20 rarity-legendary',
+                    'bg-[#111111] rounded-2xl p-6 border border-amber-500/20 rarity-legendary',
                     'col-span-1 sm:col-span-2 lg:col-span-4 text-center'
                   )}
                   initial={{ opacity: 0, y: 20 }}
