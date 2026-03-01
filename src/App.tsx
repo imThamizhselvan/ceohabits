@@ -9,6 +9,9 @@ import { Dashboard } from './pages/Dashboard';
 import { Habits } from './pages/Habits';
 import { Achievements } from './pages/Achievements';
 import { Profile } from './pages/Profile';
+import { Todos } from './pages/Todos';
+import { Reminders } from './pages/Reminders';
+import { Notes } from './pages/Notes';
 
 const pageVariants = {
   initial: { opacity: 0, y: 8 },
@@ -60,6 +63,9 @@ function AppRoutes() {
           <Route path="/habits" element={<ErrorBoundary><PageWrapper><Habits /></PageWrapper></ErrorBoundary>} />
           <Route path="/achievements" element={<ErrorBoundary><PageWrapper><Achievements /></PageWrapper></ErrorBoundary>} />
           <Route path="/profile" element={<ErrorBoundary><PageWrapper><Profile /></PageWrapper></ErrorBoundary>} />
+          <Route path="/todos" element={<ErrorBoundary><PageWrapper><Todos /></PageWrapper></ErrorBoundary>} />
+          <Route path="/reminders" element={<ErrorBoundary><PageWrapper><Reminders /></PageWrapper></ErrorBoundary>} />
+          <Route path="/notes" element={<ErrorBoundary><PageWrapper><Notes /></PageWrapper></ErrorBoundary>} />
         </Route>
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />

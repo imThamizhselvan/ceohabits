@@ -96,3 +96,46 @@ alter table public.user_achievements disable row level security;
 alter publication supabase_realtime add table public.habit_logs;
 alter publication supabase_realtime add table public.profiles;
 alter publication supabase_realtime add table public.user_achievements;
+
+-- ── TODOS ─────────────────────────────────────────────────
+create table public.todos (
+  id          uuid primary key default gen_random_uuid(),
+  user_id     text not null,
+  title       text not null,
+  description text,
+  priority    text not null default 'medium',  -- 'low' | 'medium' | 'high'
+  due_date    date,
+  is_done     boolean not null default false,
+  xp_earned   integer not null default 0,
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+alter table public.todos disable row level security;
+create index todos_user_idx on public.todos (user_id, created_at desc);
+
+-- ── REMINDERS ─────────────────────────────────────────────
+create table public.reminders (
+  id              uuid primary key default gen_random_uuid(),
+  user_id         text not null,
+  title           text not null,
+  description     text,
+  reminder_date   date not null,
+  reminder_time   time not null,
+  is_dismissed    boolean not null default false,
+  created_at      timestamptz not null default now()
+);
+alter table public.reminders disable row level security;
+create index reminders_user_date_idx on public.reminders (user_id, reminder_date asc, reminder_time asc);
+
+-- ── NOTES ─────────────────────────────────────────────────
+create table public.notes (
+  id         uuid primary key default gen_random_uuid(),
+  user_id    text not null,
+  title      text not null,
+  content    text not null default '',
+  tags       text[] not null default '{}',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+alter table public.notes disable row level security;
+create index notes_user_idx on public.notes (user_id, updated_at desc);

@@ -1,15 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, ListChecks, Trophy, User, LogOut, Crown, X } from 'lucide-react';
+import { LayoutDashboard, ListChecks, Trophy, User, LogOut, Crown, X, CheckSquare, Bell, FileText } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { useAuth } from '../../hooks/useAuth';
 import { getLevelFromXP } from '../../lib/gamification';
-
-const navItems = [
-  { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/habits', icon: ListChecks, label: 'My Habits' },
-  { to: '/achievements', icon: Trophy, label: 'Achievements' },
-  { to: '/profile', icon: User, label: 'Profile' },
-];
+import { useReminderStore } from '../../store/useReminderStore';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -19,6 +13,17 @@ interface SidebarProps {
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { signOut, profile } = useAuth();
   const level = profile ? getLevelFromXP(profile.xp) : null;
+  const reminderTodayCount = useReminderStore((s) => s.todayCount());
+
+  const navItems = [
+    { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard', badge: null as number | null },
+    { to: '/habits', icon: ListChecks, label: 'My Habits', badge: null as number | null },
+    { to: '/todos', icon: CheckSquare, label: 'To-Do List', badge: null as number | null },
+    { to: '/reminders', icon: Bell, label: 'Reminders', badge: reminderTodayCount || null },
+    { to: '/notes', icon: FileText, label: 'Notes', badge: null as number | null },
+    { to: '/achievements', icon: Trophy, label: 'Achievements', badge: null as number | null },
+    { to: '/profile', icon: User, label: 'Profile', badge: null as number | null },
+  ];
 
   return (
     <>
@@ -68,7 +73,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         {/* Nav */}
         <nav className="flex-1 p-3 space-y-1">
-          {navItems.map(({ to, icon: Icon, label }) => (
+          {navItems.map(({ to, icon: Icon, label, badge }) => (
             <NavLink
               key={to}
               to={to}
@@ -84,7 +89,12 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               }
             >
               <Icon className="w-4 h-4 shrink-0" />
-              {label}
+              <span className="flex-1">{label}</span>
+              {badge !== null && (
+                <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-red-500 text-white text-[9px] font-bold shrink-0">
+                  {badge > 9 ? '9+' : badge}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>

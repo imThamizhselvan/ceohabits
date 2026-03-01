@@ -5,12 +5,19 @@ import { TopBar } from './TopBar';
 import { BottomNav } from './BottomNav';
 import { LevelUpModal } from '../gamification/LevelUpModal';
 import { AchievementToast } from '../gamification/AchievementToast';
+import { ReminderToast } from '../reminders/ReminderToast';
 import { useGamification } from '../../hooks/useGamification';
+import { useReminders } from '../../hooks/useReminders';
+import { useReminderStore } from '../../store/useReminderStore';
+import { useAuth } from '../../hooks/useAuth';
 
 export function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { pendingLevelUp, clearPendingLevelUp, pendingAchievements, clearPendingAchievements } =
     useGamification();
+  const { user } = useAuth();
+  const { dismissReminder } = useReminders(user?.id);
+  const { pendingReminderToasts } = useReminderStore();
 
   return (
     <div className="min-h-screen bg-[hsl(var(--background))]">
@@ -31,6 +38,10 @@ export function AppLayout() {
 
       {pendingAchievements.length > 0 && (
         <AchievementToast achievements={pendingAchievements} onClose={clearPendingAchievements} />
+      )}
+
+      {pendingReminderToasts.length > 0 && (
+        <ReminderToast reminders={pendingReminderToasts} onDismiss={dismissReminder} />
       )}
     </div>
   );
