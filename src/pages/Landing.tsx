@@ -130,7 +130,7 @@ export function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Habitry turns your daily disciplines into a career-defining game. Earn XP, build
+            Lumen turns your daily disciplines into a career-defining game. Earn XP, build
             streaks, unlock achievements, and climb from Intern to CEO — one habit at a time.
           </motion.p>
 
@@ -379,9 +379,9 @@ export function Landing() {
             <div className="w-7 h-7 rounded-lg xp-gradient flex items-center justify-center">
               <Crown className="w-3.5 h-3.5 text-black" />
             </div>
-            <span className="font-bold">Habitry</span>
+            <span className="font-bold">Lumen</span>
           </div>
-          <p className="text-white/25 text-sm">© 2025 Habitry. Build your legacy.</p>
+          <p className="text-white/25 text-sm">© 2025 Lumen. Build your legacy.</p>
           <Link
             to="/auth"
             className={cn(
