@@ -53,7 +53,7 @@ export function Auth() {
           <div className="w-8 h-8 rounded-lg xp-gradient flex items-center justify-center transition-opacity group-hover:opacity-80">
             <Crown className="w-4 h-4 text-black" />
           </div>
-          <span className="font-bold text-lg">CEOhabits</span>
+          <span className="font-bold text-lg">Habitry</span>
         </Link>
 
         {/* Middle content */}

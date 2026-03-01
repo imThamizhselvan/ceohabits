@@ -1,5 +1,5 @@
 -- ============================================================
--- CEOhabits - Supabase Schema (Clerk Auth)
+-- Habitry - Supabase Schema (Clerk Auth)
 -- Run this in your Supabase SQL Editor
 -- NOTE: Uses Clerk user IDs (text) instead of Supabase auth UUIDs
 -- ============================================================

@@ -88,7 +88,7 @@ export function WeeklyReport() {
     const diffStr = diff > 0 ? `+${diff} vs last week` : diff < 0 ? `${diff} vs last week` : 'same as last week';
 
     const text = [
-      `📊 My CEOhabits week:`,
+      `📊 My Habitry week:`,
       `✅ ${thisWeek.completions} completions (${diffStr})`,
       `⚡ ${thisWeek.xp} XP earned`,
       topHabit ? `⭐ Top habit: ${topHabit.name}` : null,

@@ -51,7 +51,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             <div className="w-8 h-8 rounded-lg bg-[hsl(var(--primary))] flex items-center justify-center">
               <Crown className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-lg">CEOhabits</span>
+            <span className="font-bold text-lg">Habitry</span>
           </div>
           <button onClick={onClose} className="lg:hidden p-1 rounded hover:bg-[hsl(var(--secondary))]">
             <X className="w-4 h-4" />
