@@ -120,8 +120,8 @@ export function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Your Productivity Stack,{' '}
-            <span className="bg-clip-text text-transparent" style={goldGradient}>Gamified</span>
+            Tasks, Habits, Notes.{' '}
+            <span className="bg-clip-text text-transparent" style={goldGradient}>All in One Place.</span>
           </motion.h1>
 
           <motion.p
