@@ -23,7 +23,8 @@ export function TopBar({ onMenuClick }: TopBarProps) {
     <header
       className={cn(
         'fixed top-0 right-0 z-20 flex items-center gap-4 px-4',
-        'h-[var(--topbar-height)] bg-[hsl(var(--card))] border-b border-[hsl(var(--border))]',
+        'h-[var(--topbar-height)] border-b border-[hsl(var(--border))/0.5]',
+        'bg-[hsl(var(--card))/70] backdrop-blur-md',
         'lg:left-[var(--sidebar-width)] left-0'
       )}
     >
