@@ -34,7 +34,7 @@ const features = [
     bgColor: 'bg-yellow-400/10',
     title: 'Unlock Achievements',
     description:
-      'Earn rare, epic, and legendary badges as you build the habits that define world-class leaders.',
+      'Earn rare, epic, and legendary badges as you hit milestones and prove your consistency.',
   },
 ];
 
@@ -54,7 +54,7 @@ export function Landing() {
             <div className="w-8 h-8 rounded-lg xp-gradient flex items-center justify-center">
               <Crown className="w-4 h-4 text-black" />
             </div>
-            <span className="font-bold text-lg tracking-tight">CEOhabits</span>
+            <span className="font-bold text-lg tracking-tight">Lumen</span>
           </div>
           <div className="flex items-center gap-3">
             <Link
@@ -110,7 +110,7 @@ export function Landing() {
             className="mb-8"
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-sm text-amber-300">
-              👑 The habit tracker for high performers
+              ✨ Small habits. Serious momentum.
             </span>
           </motion.div>
 
@@ -120,8 +120,8 @@ export function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Build Habits That{' '}
-            <span className="bg-clip-text text-transparent" style={goldGradient}>Make You CEO</span>
+            The Habit Tracker That{' '}
+            <span className="bg-clip-text text-transparent" style={goldGradient}>Actually Sticks</span>
           </motion.h1>
 
           <motion.p
@@ -130,8 +130,8 @@ export function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Lumen turns your daily disciplines into a career-defining game. Earn XP, build
-            streaks, unlock achievements, and climb from Intern to CEO — one habit at a time.
+            Lumen turns your daily habits into a game you actually want to play. Earn XP, build
+            streaks, unlock achievements, and rise from Spark to Lumen — one rep at a time.
           </motion.p>
 
           <motion.div
@@ -147,7 +147,7 @@ export function Landing() {
                 'xp-gradient text-black font-semibold shadow-xl shadow-amber-900/40 border-0 hover:opacity-90 px-8'
               )}
             >
-              Start Your Climb — Free <ArrowRight className="ml-2 w-4 h-4" />
+              Start for Free <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
             <Link
               to="/auth"
@@ -192,7 +192,7 @@ export function Landing() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">How the game works</h2>
             <p className="text-white/40 max-w-xl mx-auto">
-              Every great leader is built through daily action. We make that action addictive.
+              Every great version of yourself is built through daily action. We make that action addictive.
             </p>
           </motion.div>
 
@@ -232,10 +232,10 @@ export function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Climb the career ladder</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Rise through the ranks</h2>
             <p className="text-white/40 max-w-xl mx-auto">
-              Every XP milestone unlocks a new rank. From Intern to CEO, your habits define your
-              title.
+              Every XP milestone unlocks a new rank. From Spark to Lumen, your consistency defines
+              your light.
             </p>
           </motion.div>
 
@@ -293,7 +293,7 @@ export function Landing() {
                     {ceo.xpRequired.toLocaleString()} XP · Legendary Rank
                   </p>
                   <p className="text-white/30 text-sm max-w-md mx-auto">
-                    The pinnacle of achievement. Reserved for those who turn consistency into legacy.
+                    The highest rank. Reserved for those who show up every single day without exception.
                   </p>
                 </motion.div>
               );
@@ -339,13 +339,13 @@ export function Landing() {
             <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-white/10 blur-3xl" />
             <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-white/10 blur-3xl" />
             <div className="relative z-10">
-              <div className="text-4xl mb-4">👑</div>
+              <div className="text-4xl mb-4">✨</div>
               <h2 className="text-3xl sm:text-4xl font-bold text-black mb-4">
-                Ready to lead yourself?
+                Ready to light it up?
               </h2>
               <p className="text-black/60 max-w-lg mx-auto mb-8 text-lg">
-                Join thousands of high performers building the habits that define exceptional
-                leaders. Your CEO journey starts today.
+                Join thousands of people building real habits, earning real progress, and becoming
+                the best version of themselves — one day at a time.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

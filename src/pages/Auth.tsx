@@ -65,7 +65,7 @@ export function Auth() {
             transition={{ duration: 0.5 }}
           >
             Build habits that{' '}
-            <span className="bg-clip-text text-transparent" style={goldGradient}>define leaders</span>
+            <span className="bg-clip-text text-transparent" style={goldGradient}>change everything</span>
           </motion.h1>
 
           <motion.p
@@ -74,7 +74,7 @@ export function Auth() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Track your daily disciplines, earn XP, build streaks, and climb from Intern to CEO —
+            Track your daily habits, earn XP, build streaks, and rise from Spark to Lumen —
             one consistent action at a time.
           </motion.p>
 
@@ -145,10 +145,10 @@ export function Auth() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h2 className="text-2xl font-bold text-[hsl(var(--foreground))] mb-2">
-            Welcome back, leader.
+            Welcome back.
           </h2>
           <p className="text-[hsl(var(--muted-foreground))] text-sm mb-8">
-            Sign in to continue your journey to the top.
+            Sign in to continue your streak.
           </p>
 
           <div className="flex justify-center mb-8">

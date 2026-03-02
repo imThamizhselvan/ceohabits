@@ -99,7 +99,7 @@ export function Profile() {
       {/* XP Progress */}
       {profile && (
         <div className="p-5 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--card))]">
-          <h2 className="font-semibold mb-4">Career Progress</h2>
+          <h2 className="font-semibold mb-4">Rank Progress</h2>
           <XPBar xp={profile.xp} />
         </div>
       )}

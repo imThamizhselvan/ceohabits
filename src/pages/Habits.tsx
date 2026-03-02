@@ -136,7 +136,7 @@ export function Habits() {
             Start your journey
           </h3>
           <p className="text-[hsl(var(--muted-foreground))] mb-6 max-w-sm mx-auto">
-            Every CEO has a morning routine. What habits will define your path to the top?
+            Every great journey starts with a single habit. What will you build first?
           </p>
           <Button onClick={openAdd} className="gap-2">
             <Plus className="w-4 h-4" /> Add Your First Habit

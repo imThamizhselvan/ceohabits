@@ -63,7 +63,7 @@ export function Dashboard() {
         >
           <XPBar xp={profile.xp} />
           <p className="mt-3 text-xs text-[hsl(var(--muted-foreground))] text-right">
-            View career path →
+            View rank path →
           </p>
         </div>
       )}

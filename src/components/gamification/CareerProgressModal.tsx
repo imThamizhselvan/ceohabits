@@ -14,7 +14,7 @@ export function CareerProgressModal({ open, onClose, xp }: CareerProgressModalPr
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="max-w-md">
         <DialogHeader>
-          <DialogTitle>Career Path</DialogTitle>
+          <DialogTitle>Rank Path</DialogTitle>
         </DialogHeader>
 
         <div className="mt-2 space-y-2">

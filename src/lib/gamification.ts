@@ -1,14 +1,14 @@
 import type { Level, XPProgress, Achievement } from '../types/gamification';
 
 export const LEVELS: Level[] = [
-  { level: 1, name: 'Intern',         xpRequired: 0,     icon: '🎓', color: '#94a3b8' },
-  { level: 2, name: 'Associate',      xpRequired: 100,   icon: '💼', color: '#60a5fa' },
-  { level: 3, name: 'Sr. Manager',    xpRequired: 300,   icon: '📊', color: '#34d399' },
-  { level: 4, name: 'Director',       xpRequired: 700,   icon: '🎯', color: '#a78bfa' },
-  { level: 5, name: 'VP',             xpRequired: 1500,  icon: '⚡', color: '#f472b6' },
-  { level: 6, name: 'Senior VP',      xpRequired: 3000,  icon: '🚀', color: '#fb923c' },
-  { level: 7, name: 'C-Suite',        xpRequired: 6000,  icon: '💎', color: '#e879f9' },
-  { level: 8, name: 'CEO',            xpRequired: 10000, icon: '👑', color: '#fbbf24' },
+  { level: 1, name: 'Spark',      xpRequired: 0,     icon: '✦',  color: '#94a3b8' },
+  { level: 2, name: 'Ember',      xpRequired: 100,   icon: '🔥', color: '#60a5fa' },
+  { level: 3, name: 'Glow',       xpRequired: 300,   icon: '💫', color: '#34d399' },
+  { level: 4, name: 'Radiance',   xpRequired: 700,   icon: '⭐', color: '#a78bfa' },
+  { level: 5, name: 'Beacon',     xpRequired: 1500,  icon: '🔆', color: '#f472b6' },
+  { level: 6, name: 'Luminary',   xpRequired: 3000,  icon: '🌟', color: '#fb923c' },
+  { level: 7, name: 'Nova',       xpRequired: 6000,  icon: '🌠', color: '#e879f9' },
+  { level: 8, name: 'Lumen',      xpRequired: 10000, icon: '✨', color: '#fbbf24' },
 ];
 
 export const XP_REWARDS: Record<string, number> = {
