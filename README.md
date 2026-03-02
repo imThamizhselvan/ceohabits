@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+# Lumen — Gamified Habit Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lumen is a habit tracking application that turns building good habits into a game. Earn XP, climb through career-themed levels, unlock achievements, and maintain streaks to stay motivated.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Habit Tracking** — Create habits with custom frequency (daily, weekly, weekdays), difficulty, icon, and color
+- **Gamification** — Earn XP for completing habits and level up through 8 career tiers: Spark → Ember → Glow → Radiance → Beacon → Luminary → Nova → Lumen
+- **Streaks & Multipliers** — Keep your streak alive to earn bonus XP (up to 2× at 30+ days)
+- **Achievements** — Unlock badges across common, rare, epic, and legendary rarity tiers
+- **Daily Login Bonus** — Earn 5 XP just for showing up
+- **Productivity Tools** — Todos, reminders, and notes built in
+- **Weekly Reports** — See your performance over the past week
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + TypeScript |
+| Build Tool | Vite |
+| Styling | Tailwind CSS v4, Radix UI |
+| Animations | Framer Motion |
+| State | Zustand |
+| Routing | React Router v7 |
+| Auth | Clerk |
+| Database | Supabase (PostgreSQL) |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+
+- A [Supabase](https://supabase.com) project
+- A [Clerk](https://clerk.com) application
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   git clone <repo-url>
+   cd ceohabits
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+   ```bash
+   npm install
+   ```
+
+3. Copy the environment template and fill in your keys:
+
+   ```bash
+   cp .env.local.example .env.local
+   ```
+
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   ```
+
+4. Set up the database by running `supabase-schema.sql` in your Supabase SQL editor.
+
+5. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Type-check and build for production |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint |
+
+## Gamification Details
+
+### Levels
+
+| Level | Name |
+|---|---|
+| 1 | Spark |
+| 2 | Ember |
+| 3 | Glow |
+| 4 | Radiance |
+| 5 | Beacon |
+| 6 | Luminary |
+| 7 | Nova |
+| 8 | Lumen |
+
+### XP Rewards
+
+| Difficulty | Base XP |
+|---|---|
+| Easy | 10 XP |
+| Medium | 25 XP |
+| Hard | 50 XP |
+
+### Streak Multipliers
+
+| Streak | Multiplier |
+|---|---|
+| 3 days | 1.1× |
+| 7 days | 1.25× |
+| 14 days | 1.5× |
+| 30 days | 2.0× |
+
+## Deployment
+
+The project is configured for [Netlify](https://netlify.com). The `netlify.toml` file handles SPA routing redirects automatically.
+
+## License
+
+Private project.
